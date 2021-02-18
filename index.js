@@ -5,7 +5,8 @@ window.addEventListener('load',()=>{
     canvas.height = window.innerHeight;
     const ctx= canvas.getContext("2d")
     ctx.lineWidth=3;
-    ctx.strokeStyle='black'
+    let def = "black"
+    ctx.strokeStyle=def
     
     
     let paint = false;
@@ -37,7 +38,7 @@ window.addEventListener('load',()=>{
     }
 
     const brush = document.querySelector(".paint-brush");
-    
+    const eraser = document.querySelector(".paint-eraser");
     brush.addEventListener( "click",(e)=>{
         const pop = document.querySelector(".popover");
         pop.style.visibility=pop.style.visibility=="visible"?"hidden":"visible"
@@ -47,28 +48,39 @@ window.addEventListener('load',()=>{
         }
         
     })
+    let beforeErase="";
 //x1 button
     const x1= document.querySelector('.x1-btn');
     x1.addEventListener('click',(e)=>{
         
+        ctx.strokeStyle=beforeErase;
+        eraser.style.backgroundColor="white"
+        brush.style.backgroundColor=beforeErase=="black"||"#000000"?"white":beforeErase;
         changeFontWeight(3);
-        console.log("hello")
+       // console.log("hello")
     })
 
 //x2 button
     const x2= document.querySelector('.x2-btn');
     x2.addEventListener('click',(e)=>{
         
+
+        ctx.strokeStyle=beforeErase;
+        eraser.style.backgroundColor="white"
+        brush.style.backgroundColor=beforeErase=="#000000"?"white":beforeErase;
         changeFontWeight(5);
-        console.log("hello")
+      //  console.log("hello")
     })
 
 //x3 button
     const x3= document.querySelector('.x3-btn');
+    
     x3.addEventListener('click',(e)=>{
-        
+        ctx.strokeStyle=beforeErase;
+        eraser.style.backgroundColor="white"
+        brush.style.backgroundColor=beforeErase=="#000000"?"white":beforeErase;
         changeFontWeight(10);
-        console.log("hello")
+      //  console.log("hello")
     })
 
     //click outside toolbar , inside canvas
@@ -78,12 +90,35 @@ window.addEventListener('load',()=>{
         pop.style.visibility="hidden"
         
     })
+// erase
+
+
+
+    eraser.addEventListener("click",()=>{
+
+        eraser.style.backgroundColor="silver"
+        ctx.lineWidth=20;
+        beforeErase=ctx.strokeStyle;
+        ctx.strokeStyle="white";
+        brush.style.backgroundColor="white"
+ 
+    })
 
 
    
     function changeColor(e){
         ctx.strokeStyle=e.target.value;
+    
+        if(ctx.strokeStyle=="#000000"){
+            brush.style.backgroundColor="white"
+        }
+        else{
+            brush.style.backgroundColor=e.target.value;
+        }
+
     }
+
+
 
     const colorChanger=document.querySelector("#changeColorInp")
     colorChanger.addEventListener("change",(e)=>{

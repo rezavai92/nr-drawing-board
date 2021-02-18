@@ -69,17 +69,30 @@ body{
     padding: 10px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     background-color: silver;
     /* cursor: url("https://i.stack.imgur.com/bUGV0.png"), auto; */
 
 }
 .popover div{
     
+    
 
+}
+
+.x1-btn {
+    font-size: 1rem;
+}
+.x2-btn{
+    font-size: 1.4rem;
+}
+.x3-btn{
+    font-size: 1.7rem;
 }
 .x1-btn:hover,.x2-btn:hover,.x3-btn:hover{
 
-background-color: blue;
-padding: 5px;
+background-color: rgb(157, 16, 170);
+padding: 0.5rem;
+font-size:1rem;
+border-radius: 1rem;
 }
