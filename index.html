@@ -4,14 +4,68 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+  
     <link rel="stylesheet" href="./index.css">
-    <title>Document</title>
+    <title>Flexiboard</title>
 </head>
 <body>
-    <input type="color" name="" id="changeColorInp" onChange="changeColor()" >
-    <canvas id="canvas" >
+    <div class="toolbar-board-flex " >
+        <div class="toolbar " >
+            
+                <div class="paint-brush "
+                  >
+                  <div  style="visibility: hidden;" class="popover" >
+                    <div >
+
+                       <div class="x1-btn" >
+                            <i class="fas fa-paint-brush fa-1x"></i>
+                       </div>
+                    </div>
+                    <div>
+                        <div class="x2-btn" > <i class="fas fa-paint-brush fa-2x"></i></div>
+                    </div>
+                    <div>
+                        <div class="x3-btn" > <i class="fas fa-paint-brush fa-3x"></i></div>
+                    </div>
+                </div>
+                     
+                    <i class="fas fa-paint-brush fa-lg"></i>
+                    
+                   
+                </div>
+               
+            
+            <div class="paint-color" >
+                <label for="changeColorInp"></label>
+                <input type="color" name=""
+                data-toggle="tooltip" data-placement="top" title="change text color"
+                id="changeColorInp" onChange="changeColor()" >
+            </div>
+           <div  class="paint-eraser" style="font-size: 1rem;" >
+
+            <i class="fas fa-eraser fa-2x"  ></i>
+           </div>
+
+
+           
+        </div>
+
+        <div class="canvas-div" >
+            
+            <canvas id="canvas" >
         
-    </canvas>
+            </canvas>
+        </div>
+
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="./index.js" ></script>
 </body>
 </html>
